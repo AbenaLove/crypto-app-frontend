@@ -2,12 +2,35 @@ import AssetCard from "../components/crypto/AssetCard";
 import CardCarousel from "../components/layout/CardCarousel";
 import { MarketStats } from "../data/Explore";
 import getstarted from "../assets/getstarted.svg"
-import { TopMovers, Coins, coins} from "../data/Explore";
 import ExploreCard from "../components/crypto/ExploreCard";
 import CryptoTable from "../components/crypto/CryptoTable"
-
+import { useEffect, useState } from "react";
+import { api } from "../api"
 
 function Explore(){
+  const [coins, setCoins] = useState([]);
+  const [gainers, setGainers] = useState([]);
+  const [newListings, setNewListings] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const [allData, gainersData, newData] = await Promise.all([
+        api.getAllCrypto(),
+        api.getGainers(),
+        api.getNewListings(),
+      ]);
+
+      setCoins(allData);
+      setGainers(gainersData);
+      setNewListings(newData);
+      setLoading(false);
+    };
+
+    fetchData();
+  }, []);
+
+
   return (
     <main>
       <div className="flex flex-col md:flex-row lg:flex-row ">
@@ -46,9 +69,11 @@ function Explore(){
               description={"The overall crypto market is shrinking this week. As of today, the total crypto market capitalization is 24.59 trillion, representing a 0.53% decrease from last week."} 
             >
             </CardCarousel>
-            <div>
-              <CryptoTable coins={coins}/>
-            </div>
+            {loading ? (
+              <p className="text-gray-500 py-4">Loading...</p>
+            ) : (
+              <CryptoTable coins={coins} />
+            )}
           </div>
         </div>
 
@@ -73,35 +98,43 @@ function Explore(){
               title={"Top movers"}
               description={"24hr change"}
             >
-              {
-                TopMovers.map((card, index) => (
+              { loading ? (<p className="text-gray-500">Loading...</p>) : (  
+                gainers.map((coin) => (
                   <ExploreCard
-                    key={index}
-                    image={card.image}
-                    description={card.description}
-                    title={card.title}
-                    subtitle={card.subtitle}
+                    key={coin._id}
+                    image={coin.image}
+                    title={`${coin.change24h >= 0 ? '+' : ''}${coin.change24h}%`}
+                    subtitle={`$${coin.price.toLocaleString()}`}
+                    description={coin.symbol}
+                    isPoitive={coin.change24h >= 0}
                   />
                 ))
-              }
+              )}
             </CardCarousel>
           </div>
 
+        {/* New Listings */}
           <div className="px-10 py-10">
               <CardCarousel
               title={"New on Coinbase"}
             >
-              {
-                Coins.map((coin, index) => (
+              { loading ? (
+                <p className="text-gray-500">Loading...</p>
+              ) : (
+                newListings.map((coin) => (
                   <ExploreCard
-                    key={index}
+                    key={coin._id}
                     image={coin.image}
-                    description={coin.description}
-                    title={coin.title}
-                    subtitle={coin.subtitle}
+                    // description={`$${coin.price.toLocaleString()}`}
+                    description={coin.symbol}
+                    title={coin.name}
+                    subtitle={new Date(coin.createdAt).toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric'
+  })}
                   />
                 ))
-              }
+              )}
             </CardCarousel>
           </div>
         </div>
