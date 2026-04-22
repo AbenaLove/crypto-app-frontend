@@ -7,6 +7,7 @@ import newsletter1 from "../assets/newsletter1.png"
 import newsletter2 from "../assets/newsletter2.png"
 import newsletter3 from "../assets/newsletter3.png"
 import bitcoins from "../assets/bitcoins.png"
+import CryptoTabs from "../components/crypto/CryptoTabs"
 
 
 function Home(){
@@ -49,11 +50,12 @@ function Home(){
           >See more assets</button>
         </div>
         <div className="flex-1">
-          <img 
+          <CryptoTabs/>
+          {/* <img 
             src={hero_stats}
             alt="crypto stats"
             className="w-full h-auto object-contain"
-          />
+          /> */}
         </div>
       </div>
 
