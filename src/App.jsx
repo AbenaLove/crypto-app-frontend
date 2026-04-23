@@ -7,6 +7,7 @@ import SignIn from "./pages/SignIn";
 import Learn from "./pages/Learn"
 import Profile from "./pages/Profile";
 import Explore from "./pages/Explore";
+import AssetDetail from "./pages/AssetDetail"
 
 function App() {
   
@@ -51,6 +52,16 @@ function App() {
             <>
               <Navbar/>
               <Profile/>
+              <Footer/>
+            </>
+          }
+        />
+        <Route
+          path="/asset/:id"
+          element={
+            <>
+              <Navbar/>
+              <AssetDetail/>
               <Footer/>
             </>
           }
