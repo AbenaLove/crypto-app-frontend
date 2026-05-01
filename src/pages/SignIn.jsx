@@ -47,8 +47,12 @@ function SignIn(){
           {/* Step 1 - Email */}
           {step === 1 && (
             <div className="flex flex-col gap-3">
+              <div className="bg-yellow-900 border border-yellow-600 text-yellow-300 text-xs px-4 py-2 rounded-lg">
+  Demo app – do not use your real password
+</div>
               <div className="flex flex-col gap-2">
                 <label className="text-white font-bold">Email</label>
+                
                 <input
                   name="email"
                   placeholder="Your email address"

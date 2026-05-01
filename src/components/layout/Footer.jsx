@@ -193,6 +193,9 @@ function Footer() {
           <p>English</p>
         </div>
       </div>
+      <p className="text-center text-gray-400 text-xs mt-4">
+  This is a demo project built for educational purposes. Do not enter real personal information. Not affiliated with Coinbase, Inc.
+</p>
       </div>
 
 

@@ -8,12 +8,14 @@ import Learn from "./pages/Learn"
 import Profile from "./pages/Profile";
 import Explore from "./pages/Explore";
 import AssetDetail from "./pages/AssetDetail"
+import WarningBanner from "./components/common/WarningBanner";
 
 function App() {
   
 
   return (
     <>
+      <WarningBanner />
       <Routes>
         <Route
           path="/"

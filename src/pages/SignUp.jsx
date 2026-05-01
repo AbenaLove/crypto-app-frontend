@@ -84,7 +84,9 @@ function SignUp(){
 
                 {/* Show error if something goes wrong */}
               {error && <p className="text-red-400 text-sm">{error}</p>}
-
+                <div className="bg-yellow-900 border border-yellow-600 text-yellow-300 text-xs px-4 py-2 rounded-lg">
+  Demo app – do not use your real password
+</div>
                 <div>
                   <label className="text-white">Email</label>
                   <input
