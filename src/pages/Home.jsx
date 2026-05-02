@@ -8,9 +8,11 @@ import newsletter2 from "../assets/newsletter2.png"
 import newsletter3 from "../assets/newsletter3.png"
 import bitcoins from "../assets/bitcoins.png"
 import CryptoTabs from "../components/crypto/CryptoTabs"
+import { useNavigate } from "react-router"
 
 
 function Home(){
+  const navigate = useNavigate();
   return(
     <main >
       <div className="flex flex-col lg:flex-row items-center gap-20 py-30 px-10">
@@ -33,7 +35,9 @@ function Home(){
             type="email"
             placeholder="satoshi@nakamoto.com"
             />
-            <button className="btn-primary">
+            <button className="btn-primary" 
+              onClick={() => navigate('/signup')}
+            >
               Sign Up
             </button>
           </div>
@@ -46,7 +50,7 @@ function Home(){
           <h2 className="subheading">Explore crypto like Bitcoin, Ethereum, and Dogecoin</h2>
           <p className="text-main text-gray-500">
             Simply and securely buy, sell and manage hundreds of cryptocurrencies</p>
-          <button className="btn-dark"
+          <button className="btn-dark" onClick={()=> navigate('explore')}
           >See more assets</button>
         </div>
         <div className="flex-1">
@@ -109,7 +113,7 @@ function Home(){
           <p className="text-main text-gray-600">
             An everything app to trade, create, discover, and chat, all in one place.
           </p>
-          <button className="btn-dark">
+          <button className="btn-dark" onClick={() => navigate('/learn')}>
             Learn more
           </button>
         </div>
@@ -120,23 +124,23 @@ function Home(){
           <div><h1 className="heading">New to crypto? Learn some crypto basics</h1></div>
           <div className="flex flex-col gap-5">
             <p className="text-main text-gray-600">Beginner guides, practical tips, and market updates for first-timers, experienced investors, and everyone in between</p>
-            <button className="btn-dark">Read more</button>
+            <button className="btn-dark" onClick={()=> navigate('/learn')}>Read more</button>
           </div>
         </div>
         <div className="grid md:grid-cols-3 gap-10">
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-10" onClick={() => navigate('/learn')}>
             <div><img
               src={newsletter1}
             /></div>
             <h3 className="sub-subheading">USDC: The digital dollar for the global crypto economy</h3>
             <p className="text-main text-gray-600">coinbase believes crypto will be part of the solution for creating an open financial system that is both...</p>
           </div>
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-10" onClick={()=> navigate('/learn')}>
             <div><img src={newsletter2} /></div>
             <h3 className="sub-subheading">Can crypto really replace your bank account?</h3>
             <p className="text-main text-gray-600">If you're a big enough fan of crypto, you've probably heard the phrase "be your own bank" or the term...</p>
           </div>
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-10" onClick={()=> navigate('/learn')}>
             <div><img src={newsletter3} /></div>
             <h3 className="sub-subheading">When is the best time to invest in crypto?</h3>
             <p className="text-main text-gray-600">Crypto currencies like Bitcoin can experience daily (or even hourly) price volatility. As with any kind of...</p>
@@ -153,7 +157,7 @@ function Home(){
             type="email"
             placeholder="satoshi@nakamoto.com"
             />
-          <button className="btn-primary">
+          <button className="btn-primary" onClick={()=> navigate('/signup')}>
             Sign Up
           </button>
           </div>

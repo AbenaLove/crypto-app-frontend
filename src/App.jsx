@@ -15,7 +15,8 @@ function App() {
 
   return (
     <>
-      <WarningBanner />
+      
+      {/* <div className="pt-8"> */}
       <Routes>
         <Route
           path="/"
@@ -69,6 +70,7 @@ function App() {
           }
         />
       </Routes>
+      {/* </div> */}
     </>
     
   );

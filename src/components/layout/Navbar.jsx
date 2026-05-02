@@ -3,6 +3,7 @@ import { MagnifyingGlassIcon, GlobeEuropeAfricaIcon } from "@heroicons/react/16/
 import coinbase_logo from "../../assets/coinbase_logo.svg";
 import { useNavigate } from "react-router";
 import { api } from "../../api";
+import WarningBanner from "../common/WarningBanner";
 
 function Navbar() {
   const [user, setUser] = useState(null);
@@ -25,7 +26,8 @@ function Navbar() {
 
   return (
     <nav className="bg-white shadow-md fixed w-full z-50">
-      <div className="px-10 py-6 flex items-center justify-between">
+      <WarningBanner />
+      <div className="px-10 py-3 flex items-center justify-between">
         <div>
           <img src={coinbase_logo} alt="Coinbase Logo" className="h-15 w-auto" />
         </div>

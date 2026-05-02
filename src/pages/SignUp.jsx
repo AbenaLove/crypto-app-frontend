@@ -57,7 +57,7 @@ function SignUp(){
                   </div>
                 </div>
 
-                <div className="flex gap-10 border border-gray-600 px-10 py-6 rounded-xl">
+                <div className="flex gap-10 border border-gray-600 px-10 py-6 rounded-xl" onClick={()=> setStep(2)}>
                   <img src={business} className="w-20 h-20 object-contain"/>
                   <div>
                     <p className="text-main text-white font-bold">Business</p>
@@ -65,7 +65,7 @@ function SignUp(){
                   </div>
                 </div>
 
-                <div className="flex gap-10 border border-gray-600 px-10 py-6 rounded-xl">
+                <div className="flex gap-10 border border-gray-600 px-10 py-6 rounded-xl" onClick={()=> setStep(2)}>
                   <img src={developer} className="w-20 h-20 object-contain"/>
                   <div>
                     <p className="text-main text-white font-bold">Developer</p>
@@ -94,6 +94,7 @@ function SignUp(){
                     placeholder="Your email address"
                     value={formData.email}
                     onChange={handleChange}
+                    className="bg-gray-800 text-white px-4 py-3 rounded-lg w-full"
                   />
                 </div>
                 <button className="btn-primary"
