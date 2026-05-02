@@ -21,15 +21,15 @@
     @apply bg-white rounded-sm text-main font-medium px-6 py-5
   }
   .heading {
-    @apply text-8xl font-semibold
+    @apply text-7xl font-semibold
   }
   .subheading {
     @apply 
-      text-6xl
+      text-5xl
     
   }
   .sub-subheading {
-    @apply text-4xl font-semibold
+    @apply text-3xl font-semibold
   }
   .search-input {
     @apply bg-gray-200 rounded-full w-full border-0 text-gray-700 text-main
@@ -37,7 +37,7 @@
 }
 @layer base {
   input {
-    @apply w-full max-w-md px-4 py-3 border border-gray-600 rounded-lg
+    @apply w-full max-w-md px-3 py-2 border border-gray-600 rounded-lg
            focus:outline-none focus:ring-2 focus:ring-blue-500;
   }
 }
