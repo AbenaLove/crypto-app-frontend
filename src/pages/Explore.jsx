@@ -6,8 +6,11 @@ import ExploreCard from "../components/crypto/ExploreCard";
 import CryptoTable from "../components/crypto/CryptoTable"
 import { useEffect, useState } from "react";
 import { api } from "../api"
+import { useNavigate } from "react-router";
 
 function Explore(){
+  const navigate = useNavigate();
+
   const [coins, setCoins] = useState([]);
   const [gainers, setGainers] = useState([]);
   const [newListings, setNewListings] = useState([]);
@@ -85,7 +88,7 @@ function Explore(){
                     <p className="text-main font-bold text-white">Get started</p>
                     <p className="font-bold text-white">Create your account today</p>
                   </div>
-                  <button className="w-25 py-2 px-3 rounded-full font-bold bg-white">Sign up</button>
+                  <button className="w-25 py-2 px-3 rounded-full font-bold bg-white" onClick={() => navigate('/signup')}>Sign up</button>
                 </div>
                 <div className="flex-1">
                   <img src={getstarted} alt="Sign up image"/>
