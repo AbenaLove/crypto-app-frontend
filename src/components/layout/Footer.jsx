@@ -131,7 +131,7 @@ function Footer() {
             <ul className="space-y-2 text-sm text-subheading">
               <li><a className="hover:text-black">Help center</a></li>
               <li><a className="hover:text-black">Contact us</a></li>
-              <li><a className="hover:text-black">Create account</a></li>
+              <li onClick={() => navigate('/signup')}><a className="hover:text-black">Create account</a></li>
               <li><a className="hover:text-black">ID verification</a></li>
               <li><a className="hover:text-black">Account information</a></li>
               <li><a className="hover:text-black">Payment methods</a></li>

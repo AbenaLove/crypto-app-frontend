@@ -73,7 +73,7 @@ function CryptoTabs(){
                   className="w-8 h-8 rounded-full object-contain"
                   onError={(e) => e.target.style.display = 'none'}
                 />
-                <p className="text-white text-5xl">{coin.name}</p>
+                <p className="text-white text-3xl">{coin.name}</p>
               </div>
 
               {/* Right: price + change */}

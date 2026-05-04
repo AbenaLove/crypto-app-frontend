@@ -118,7 +118,7 @@ function SignUp(){
                       Sign up with Apple
                   </IconButton>
                 </div>
-                <p className="text-main text-white font-bold">Already have an account ? <span className="text-blue-400">Sign in</span></p>
+                <p className="text-main text-white font-bold">Already have an account ? <span className="text-blue-400" onClick={() => navigate('/signin')}>Sign in</span></p>
                 <p className="text-gray-400">By creating an account you certify that you are over the age of 18 and agree to our Privacy Policy and Cookie Policy.</p>
               </div>
             </>
